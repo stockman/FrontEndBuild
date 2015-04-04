@@ -16,7 +16,8 @@ used this for the auto-rotate
 http://jsfiddle.net/paulmason411/TZy7A/2/
 
 add click thumbnail
-https://www.dougv.com/2007/02/showing-a-larger-image-from-a-thumbnail-onclick-via-javascript-dom/
+** check this!! https://www.dougv.com/2007/02/showing-a-larger-image-from-a-thumbnail-onclick-via-javascript-dom/
+
 
 or use the data-resize
 http://www.sitepoint.com/use-html5-data-attributes/

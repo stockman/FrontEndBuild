@@ -45,13 +45,20 @@ $interval = setInterval(
 );
 
 // #they are using the thumbnail data-resized to achive this not onclick.
+var getphots = $("#photos_distinct ul li a img");
+var photon = getphots;
+// var photon = getphots.data("resized");
+// var hello = photon.attr("data-resized") ;
 
-var photos_distinct = document.getElementById("photos_distinct");
+
+
+// var photos_distinct = document.getElementById("photos_distinct");
 // you need to get the ul li a value
- console.log(photos_distict);
-var show = photos_distinct.getAttribute("data-list-size");
+
+ console.log(photon);
+/*var show = photos_distinct.getAttribute("data-list-size");
 console.log(show);
-photos_distinct.setAttribute("data-list-size", +show+3);
+photos_distinct.setAttribute("data-list-size", +show+3);*/
 
 
 
