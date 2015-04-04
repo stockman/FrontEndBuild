@@ -1,4 +1,23 @@
-#photo_container {
+/*#photo_container {
 	height: 460px;
 	width: 840px;
+}
+*/
+.carousel {
+height: 480px;
+width: 890px;
+position: relative;
+overflow: hidden;
+
+}
+
+.carousel ul {
+	list-style: none;
+}
+
+.carousel li {
+  display: none;
+  position: absolute; 
+  top: 0; 
+  left: 0; 
 }
