@@ -44,5 +44,15 @@ $interval = setInterval(
     , $transition_time +  $time_between_slides 
 );
 
+// #they are using the thumbnail data-resized to achive this not onclick.
+
+var photos_distinct = document.getElementById("photos_distinct");
+// you need to get the ul li a value
+ console.log(photos_distict);
+var show = photos_distinct.getAttribute("data-list-size");
+console.log(show);
+photos_distinct.setAttribute("data-list-size", +show+3);
+
+
 
 }(jQuery));

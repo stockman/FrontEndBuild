@@ -5,3 +5,36 @@ http://www.joezimjs.com/javascript/how-to-build-a-custom-carousel-with-jquery-an
 
 also this one looks pretty good:
 https://github.com/filamentgroup/responsive-carousel
+
+My data:
+what bookijng has - http://www.booking.com/hotel/ca/banff-boutique-inn.html?sid=5a48e4998c04456e254b5d1cbcd5573b;dcid=1;no_rooms=1;req_adults=2;req_children=0&
+
+this could be a good start:
+http://stackoverflow.com/questions/16240673/simple-carousel-example-from-google
+
+used this for the auto-rotate
+http://jsfiddle.net/paulmason411/TZy7A/2/
+
+add click thumbnail
+https://www.dougv.com/2007/02/showing-a-larger-image-from-a-thumbnail-onclick-via-javascript-dom/
+
+or use the data-resize
+http://www.sitepoint.com/use-html5-data-attributes/
+
+
+
+
+
+last and next buttons?
+??
+
+Steps:
+load next picture but hide
+fade to next picture
+on click of thumbnail load and show the larger photo as the image.
+on next /last show next image
+
+
+
+You can leverage bootstrap by searching within the bootstap.js
+
