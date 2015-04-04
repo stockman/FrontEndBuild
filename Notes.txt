@@ -1,0 +1,7 @@
+Notes:
+see this one?
+
+http://www.joezimjs.com/javascript/how-to-build-a-custom-carousel-with-jquery-and-roundabout/
+
+also this one looks pretty good:
+https://github.com/filamentgroup/responsive-carousel
