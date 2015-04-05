@@ -16,7 +16,7 @@ Don't know if I need the pic counter
 var $slider = $('.carousel'); // class or id of carousel slider
 var $slide = 'li'; // could also use 'img' if you're not using a ul
 var $transition_time = 1000; // 1 second
-var $time_between_slides = 14000; // 4 seconds
+var $time_between_slides = 4000; // 4 seconds
 
 function slides(){
   return $slider.find($slide);
@@ -32,7 +32,10 @@ slides().first().fadeIn($transition_time);
 $interval = setInterval(
     function(){
       var $i = $slider.find($slide + '.active').index();
-    
+
+      var t = slides().eq($i).children('a').children('img');
+      console.log(t.data('resized'));
+
       slides().eq($i).removeClass('active');
       slides().eq($i).fadeOut($transition_time);
     
@@ -59,6 +62,18 @@ var photon = getphots;
 /*var show = photos_distinct.getAttribute("data-list-size");
 console.log(show);
 photos_distinct.setAttribute("data-list-size", +show+3);*/
+
+// #ok so option 1 select the unique and clicks to do something.
+
+$('#option1').on('click', function () {
+    var $el = $(this).children('img');
+    console.log($el.data('resized'));
+    // console.log($el);
+    // console.log($slider.find($slide));
+
+
+});
+
 
 
 
