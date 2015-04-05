@@ -12,6 +12,74 @@ Don't know if I need the pic counter
 
 (function($) {
 
+
+// #1st step inject the html infto 
+// var pickie = "img/5_large.jpg";
+// var picList =  document.getElementById("photos_distinct");
+var picList =  $("#photos_distinct ul");
+var t = picList.children('li').find('img')
+var pickie = "img/" + t.first().data('resized');
+
+
+
+
+// var piclister = picList.children('ul');
+// console.log(d);
+
+/*
+
+
+listItems.each(function(idx, li) {
+    var product = $(li);
+
+    // and the rest of your code
+});
+
+$('#photos_distinct').children('ul');
+var photolist = picker.getElementsByTagName("li");
+console.log(photolist[0]);
+
+// var nums = $('#photos_distinct').children('ul');
+var nums = document.getElementById("ul");
+var listItem = nums.getElementsByTagName("li");
+console.log(listItem[0]);
+
+
+
+var newNums = [];
+
+for (var i=0; i < listItem.length; i++) {
+  // console.log(listItem[i]);
+    newNums.push( parseInt( listItem[i].innerHTML, 10 ) );
+}
+
+console.log(newNums)
+*/
+
+/*
+
+var t = $('#photos_distinct').find('img');
+console.log(t);
+*/
+function setPic() {
+/*  $("#photo_container").fadeIn('slow', function() {
+    $("#photo_container").css("background", "url(" + pickie + ")"); 
+  });*/
+$('#photo_container').append('herllo')
+  $('#photo_container').fadeTo('slow', 0.3, function()
+{
+    $(this).css('background-image', 'url(' + pickie + ')');
+}).delay(10).fadeTo('slow', 1);
+  
+}
+
+setPic();
+
+/*
+
+
+
+
 // settings
 var $slider = $('.carousel'); // class or id of carousel slider
 var $slide = 'li'; // could also use 'img' if you're not using a ul
@@ -31,8 +99,15 @@ slides().first().fadeIn($transition_time);
 // auto scroll 
 $interval = setInterval(
     function(){
-      var $i = $slider.find($slide + '.active').index();
+      slideThis();
+    }
+    , $transition_time +  $time_between_slides
+);
 
+
+var $i = $slider.find($slide + '.active').index();
+function slideThis(){
+        
       var t = slides().eq($i).children('a').children('img');
       console.log(t.data('resized'));
 
@@ -43,9 +118,10 @@ $interval = setInterval(
     
       slides().eq($i + 1).fadeIn($transition_time);
       slides().eq($i + 1).addClass('active');
-    }
-    , $transition_time +  $time_between_slides 
-);
+      // console.log($transition_time +  $time_between_slides);
+}
+
+
 
 // #they are using the thumbnail data-resized to achive this not onclick.
 var getphots = $("#photos_distinct ul li a img");
@@ -65,14 +141,30 @@ photos_distinct.setAttribute("data-list-size", +show+3);*/
 
 // #ok so option 1 select the unique and clicks to do something.
 
-$('#option1').on('click', function () {
-    var $el = $(this).children('img');
-    console.log($el.data('resized'));
+
+function skipTo($el) {
+
+    pickie = "img/" + $el.data('resized');
+
+  setPic()
+}
+
+$('#photos_distinct ul li a').on('mouseover', function () {
+      var $el = $(this).children('img');
+  skipTo($el);
+});
+    // console.log($el.data('resized'));
+    // function slideCurrent(){
+/*      i = $el;
+      var t = slides().eq($i).children('a').children('img');
+      console.log(t);*/
+      // $time_between_slides = 4000;
+    // }
     // console.log($el);
     // console.log($slider.find($slide));
 
 
-});
+
 
 
 

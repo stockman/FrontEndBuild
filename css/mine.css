@@ -3,13 +3,22 @@
 	width: 840px;
 }
 */
-.carousel {
-height: 480px;
-width: 890px;
+
+#photo_container {
+height: 460px;
+width: 840px;
 position: relative;
 overflow: hidden;
 
 }
+
+/*.carousel {
+height: 460px;
+width: 890px;
+position: relative;
+overflow: hidden;
+
+}*/
 
 .carousel ul {
 	list-style: none;
@@ -20,4 +29,13 @@ overflow: hidden;
   position: absolute; 
   top: 0; 
   left: 0; 
+}
+
+.one_photo img:hover {
+  opacity: 0.5;
+  border: 1px solid #fff;
+  outline: 3px solid #8ba8d7;
+}
+.one_photo img {
+  border: 1px solid transparent;
 }
