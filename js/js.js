@@ -25,34 +25,14 @@ var mappie = '<iframe width="300" height="200" frameborder="0" style="border:0" 
 $('.map').html('');
 $('.map').append(mappie);
 
-
-
-
-// var place_encode = encodeURIComponent(str);
-
-
-
-// #1st step inject the html infto 
-// var pickie = "img/5_large.jpg";
-// var picList =  document.getElementById("photos_distinct");
-var picList =  $("#photos_distinct ul");
-var t = picList.children('li').find('img')
-var pickie = "img/" + t.first().data('resized');
-
-
-
-
 /* the fader */
-// #
-
-
-
-
-
 
 
 var list = new Array();
 var increment = 0;
+var timer = null;
+var updatetimer = null;
+
 
 $(function(){
 $.when(
@@ -60,184 +40,54 @@ $.when(
         image = $(this).attr('src');
         list.push(image);
     })
-).then(function(){
-    rotate()
+    ).then(function(){
+        rotate()
+  });
 });
-});
+
+
 
 function rotate(){
-$("#deactive").fadeOut(1000, function(){
-});
+  $("#deactive").fadeOut(1000, function(){
+  });
 
-var t = list[increment].replace('thumb','large');
-console.log(t);
+  var t = list[increment].replace('thumb','large');
+
+  $("#active").attr('src', t);
+  updatetimer = function () {
+    timer = setTimeout(function(){
+        increment++;
+
+        if(increment == list.length){
+            increment = 0;
+        }
+
+        $("#deactive").attr('src', t);
+
+        $("#deactive").fadeIn(2000, function(){
+            rotate();
+        });
+    }, 3300);
+  }
+  updatetimer();
+}
+
+var photos_d = $('#photos_distinct ul li a');
+photos_d.on('mouseover', function () {
+      var t = $(this).attr('href');
+
+    window.clearTimeout(timer)
 $("#active").attr('src', t);
 
-setTimeout(function(){
-    increment++;
 
-    if(increment == list.length){
-        increment = 0;
-    }
-
-    $("#deactive").attr('src', t);
-
-    $("#deactive").fadeIn(2000, function(){
-        rotate();
-    });
-}, 2000);
-}
-
-
-
-
-
-
-
-
-
-// var piclister = picList.children('ul');
-// console.log(d);
-
-/*
-
-
-listItems.each(function(idx, li) {
-    var product = $(li);
-
-    // and the rest of your code
+console.log('stop');
 });
 
-$('#photos_distinct').children('ul');
-var photolist = picker.getElementsByTagName("li");
-console.log(photolist[0]);
 
-// var nums = $('#photos_distinct').children('ul');
-var nums = document.getElementById("ul");
-var listItem = nums.getElementsByTagName("li");
-console.log(listItem[0]);
-
-
-
-var newNums = [];
-
-for (var i=0; i < listItem.length; i++) {
-  // console.log(listItem[i]);
-    newNums.push( parseInt( listItem[i].innerHTML, 10 ) );
-}
-
-console.log(newNums)
-*/
-
-/*
-
-var t = $('#photos_distinct').find('img');
-console.log(t);
-*/
-// function setPic() {
-// /*  $("#photo_container").fadeIn('slow', function() {
-//     $("#photo_container").css("background", "url(" + pickie + ")"); 
-//   });*/
-// // $('#photo_container').after('<div></div>')
-//   $('#photo_container').fadeTo('slow', 0.3, function()
-// {
-//     $(this).css('background-image', 'url(' + pickie + ')');
-// }).delay(10).fadeTo('slow', 1);
-  
-// }
-
-// setPic();
-
-/*
-
-
-
-
-// settings
-var $slider = $('.carousel'); // class or id of carousel slider
-var $slide = 'li'; // could also use 'img' if you're not using a ul
-var $transition_time = 1000; // 1 second
-var $time_between_slides = 4000; // 4 seconds
-
-function slides(){
-  return $slider.find($slide);
-}
-
-slides().fadeOut();
-
-// set active classes
-slides().first().addClass('active');
-slides().first().fadeIn($transition_time);
-
-// auto scroll 
-$interval = setInterval(
-    function(){
-      slideThis();
-    }
-    , $transition_time +  $time_between_slides
-);
-
-
-var $i = $slider.find($slide + '.active').index();
-function slideThis(){
-        
-      var t = slides().eq($i).children('a').children('img');
-      console.log(t.data('resized'));
-
-      slides().eq($i).removeClass('active');
-      slides().eq($i).fadeOut($transition_time);
-    
-      if (slides().length == $i + 1) $i = -1; // loop to start
-    
-      slides().eq($i + 1).fadeIn($transition_time);
-      slides().eq($i + 1).addClass('active');
-      // console.log($transition_time +  $time_between_slides);
-}
-
-
-
-// #they are using the thumbnail data-resized to achive this not onclick.
-var getphots = $("#photos_distinct ul li a img");
-var photon = getphots;
-// var photon = getphots.data("resized");
-// var hello = photon.attr("data-resized") ;
-
-
-
-// var photos_distinct = document.getElementById("photos_distinct");
-// you need to get the ul li a value
-
- console.log(photon);
-/*var show = photos_distinct.getAttribute("data-list-size");
-console.log(show);
-photos_distinct.setAttribute("data-list-size", +show+3);*/
-
-// #ok so option 1 select the unique and clicks to do something.
-
-
-function skipTo($el) {
-
-    pickie = "img/" + $el.data('resized');
-
-  setPic()
-}
-
-$('#photos_distinct ul li a').on('mouseover', function () {
-      var $el = $(this).children('img');
-  skipTo($el);
+photos_d.on('mouseout', function () {
+    updatetimer();
+    console.log('start');
 });
-    // console.log($el.data('resized'));
-    // function slideCurrent(){
-/*      i = $el;
-      var t = slides().eq($i).children('a').children('img');
-      console.log(t);*/
-      // $time_between_slides = 4000;
-    // }
-    // console.log($el);
-    // console.log($slider.find($slide));
-
-
-
 
 
 
