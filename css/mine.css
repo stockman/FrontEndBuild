@@ -9,20 +9,16 @@ height: 460px;
 width: 840px;
 position: relative;
 overflow: hidden;
+border: 1px solid transparent;
 
 }
+
+.topt {display: none;}
 
 /*temporarily hide*/
 
 
-#display {
-margin: 0px auto;
-position: relative;
-text-align: center;
-width: 840px;
-}
-
-#display img {
+#photo_container img {
 left: 0px;
 margin: 0px auto;
 position: absolute;
