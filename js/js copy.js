@@ -22,8 +22,12 @@ hotel_encoded = encodeURIComponent(hotel_encoded);
 // console.log(hotel_encoded);
 
 var mappie = '<iframe width="300" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=' + hotel_encoded + '&key=AIzaSyD1Z5-p_E_ls9hwu__Ie84MwtSB_8ha8xk"></iframe>';
-$('.map').html('');
+
+$('.map').children().remove();
 $('.map').append(mappie);
+// console.log(mp);
+
+
 
 
 

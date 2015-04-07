@@ -10,6 +10,7 @@ My data:
 what bookijng has - http://www.booking.com/hotel/ca/banff-boutique-inn.html?sid=5a48e4998c04456e254b5d1cbcd5573b;dcid=1;no_rooms=1;req_adults=2;req_children=0&
 
 this could be a good start:
+!!!!!!! http://www.journaldev.com/4850/jquery-css-thumbnail-image-slider-gallery !!!!!!
 http://stackoverflow.com/questions/16240673/simple-carousel-example-from-google
 
 used this for the auto-rotate

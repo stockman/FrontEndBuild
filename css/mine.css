@@ -39,3 +39,37 @@ overflow: hidden;
 .one_photo img {
   border: 1px solid transparent;
 }
+
+/*#Map*/
+.map {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: super;
+  width: 30%;
+}
+
+.desc_inside {
+  display: inline-block;
+  width: 60%;
+}
+
+/*med screen*/
+@media screen and (max-width:1024px) {
+
+
+  body {width: 100% !important;}
+  #photo_container {
+    width: 100%;
+    margin: 4px;
+  }
+}
+/*small screen*/
+@media screen and (max-width:768px) {
+  .desc_inside, .map {width: 100%}
+  .map {
+    text-align: center;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .facilities, h2 {text-align: center;}
+}
