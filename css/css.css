@@ -74,6 +74,10 @@ h2 {
 	width: 80px;
 }
 
+.photo_contrain {
+	margin: 3px;
+}
+
 /* reviews */
 
 .reviews_list {

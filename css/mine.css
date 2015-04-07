@@ -12,25 +12,6 @@ overflow: hidden;
 
 }
 
-/*.carousel {
-height: 460px;
-width: 890px;
-position: relative;
-overflow: hidden;
-
-}*/
-
-.carousel ul {
-	list-style: none;
-}
-
-.carousel li {
-  display: none;
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-}
-
 .one_photo img:hover {
   opacity: 0.5;
   border: 1px solid #fff;
@@ -57,14 +38,16 @@ overflow: hidden;
 @media screen and (max-width:1024px) {
 
 
-  body {width: 100% !important;}
-  #photo_container {
-    width: 100%;
-    margin: 4px;
+  body {width: 98% !important;}
+  .photos .one_photo img {
+    /*margin:0;*/
   }
 }
 /*small screen*/
 @media screen and (max-width:768px) {
+  #photo_container  {
+    width: 100%;
+  }
   .desc_inside, .map {width: 100%}
   .map {
     text-align: center;
@@ -72,4 +55,5 @@ overflow: hidden;
     margin-top: 10px;
   }
   .facilities, h2 {text-align: center;}
+
 }
