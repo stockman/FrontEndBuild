@@ -12,6 +12,27 @@ overflow: hidden;
 
 }
 
+/*temporarily hide*/
+
+
+#display {
+margin: 0px auto;
+position: relative;
+text-align: center;
+width: 840px;
+}
+
+#display img {
+left: 0px;
+margin: 0px auto;
+position: absolute;
+top: 0px;
+}
+
+#image_preload {
+display: none;
+}
+
 .one_photo img:hover {
   opacity: 0.5;
   border: 1px solid #fff;

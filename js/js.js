@@ -42,6 +42,60 @@ var pickie = "img/" + t.first().data('resized');
 
 
 
+/* the fader */
+// #
+
+
+
+
+
+
+
+var list = new Array();
+var increment = 0;
+
+$(function(){
+$.when(
+    $("#photos_distinct img").each(function(i, e){
+        image = $(this).attr('src');
+        list.push(image);
+    })
+).then(function(){
+    rotate()
+});
+});
+
+function rotate(){
+$("#deactive").fadeOut(1000, function(){
+});
+
+var t = list[increment].replace('thumb','large');
+console.log(t);
+$("#active").attr('src', t);
+
+setTimeout(function(){
+    increment++;
+
+    if(increment == list.length){
+        increment = 0;
+    }
+
+    $("#deactive").attr('src', t);
+
+    $("#deactive").fadeIn(2000, function(){
+        rotate();
+    });
+}, 2000);
+}
+
+
+
+
+
+
+
+
+
 // var piclister = picList.children('ul');
 // console.log(d);
 
@@ -80,19 +134,19 @@ console.log(newNums)
 var t = $('#photos_distinct').find('img');
 console.log(t);
 */
-function setPic() {
-/*  $("#photo_container").fadeIn('slow', function() {
-    $("#photo_container").css("background", "url(" + pickie + ")"); 
-  });*/
-// $('#photo_container').after('<div></div>')
-  $('#photo_container').fadeTo('slow', 0.3, function()
-{
-    $(this).css('background-image', 'url(' + pickie + ')');
-}).delay(10).fadeTo('slow', 1);
+// function setPic() {
+// /*  $("#photo_container").fadeIn('slow', function() {
+//     $("#photo_container").css("background", "url(" + pickie + ")"); 
+//   });*/
+// // $('#photo_container').after('<div></div>')
+//   $('#photo_container').fadeTo('slow', 0.3, function()
+// {
+//     $(this).css('background-image', 'url(' + pickie + ')');
+// }).delay(10).fadeTo('slow', 1);
   
-}
+// }
 
-setPic();
+// setPic();
 
 /*
 
